@@ -5,28 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: delroudi <delroudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/28 21:20:58 by delroudi          #+#    #+#             */
-/*   Updated: 2026/09/28 21:53:15 by delroudi         ###   ########.fr       */
+/*   Created: 2026/09/24 18:15:33 by delroudi          #+#    #+#             */
+/*   Updated: 2026/10/03 17:31:00 by delroudi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+#include "libft.h"
+
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    unsigned char *ss1; 
-    unsigned char * ss2;
-    size_t i;
-    
-    ss1 = (unsigned char*) s1;
-    ss2 = (unsigned char*) s2;
-    
-    i=0;
-   while(i<n)
-   {
-     
-      if( ss1[i]!=ss2[i])
-          return (ss1[i]-ss2[i]);
-      i++;
-   }
-   return (0); 
+	unsigned char	*p1;
+	unsigned char	*p2;
+	size_t			index;
+
+	p1 = (unsigned char *)s1;
+	p2 = (unsigned char *)s2;
+	index = 0;
+	while (index < n)
+	{
+		if (p1[index] != p2[index])
+			return (p1[index] - p2[index]);
+		index++;
+	}
+	return (0);
 }

@@ -1,29 +1,29 @@
-# include "libft.h"
-char *ft_strrchr(const char *s, int c)
-{
-    unsigned i = 0 ;
-    unsigned cc= (unsigned char) c;
-    char*last_occurrence=NULL;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: delroudi <delroudi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/09/24 18:15:33 by delroudi          #+#    #+#             */
+/*   Updated: 2026/10/03 17:31:00 by delroudi        ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-    while(s[i])
-    {
-        if((unsigned char)s[i]==cc)
-           last_occurrence= ((char *)&s[i]);
-         i++;
-    }
-    if(cc=='\0')
-    {
-        last_occurrence=(char *)&s[i];
-    }
-   return(last_occurrence);
-  
-}
-/*
-int	main(void)
+#include "libft.h"
+
+char	*ft_strrchr(const char *s, int c)
 {
-	const char *str = "Hello, World!";
-    char *str1=ft_strrchr(str ,111);
-	printf("String: %s\n", str);
-	printf("Length: %s\n", str1);
-	return (0);
-}*/
+	char	*last;
+
+	last = NULL;
+	while (*s != '\0')
+	{
+		if (*s == (char)c)
+			last = (char *)s;
+		s++;
+	}
+	if ((char)c == '\0')
+		return ((char *)s);
+	return (last);
+}

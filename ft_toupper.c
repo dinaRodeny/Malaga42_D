@@ -5,17 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: delroudi <delroudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/24 22:02:38 by delroudi          #+#    #+#             */
-/*   Updated: 2026/09/24 22:04:21 by delroudi         ###   ########.fr       */
+/*   Created: 2026/09/24 18:15:33 by delroudi          #+#    #+#             */
+/*   Updated: 2026/10/03 17:31:00 by delroudi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
-  if ((c >= 'a' && c <= 'z'))
-        c-=32;
-   
-  return (c);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }

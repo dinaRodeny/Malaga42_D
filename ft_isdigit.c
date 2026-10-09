@@ -5,27 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: delroudi <delroudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/24 20:13:45 by delroudi          #+#    #+#             */
-/*   Updated: 2026/09/24 20:50:42 by delroudi         ###   ########.fr       */
+/*   Created: 2026/09/24 18:15:33 by delroudi          #+#    #+#             */
+/*   Updated: 2026/10/03 17:31:00 by delroudi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-# include "libft.h"
-
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-  if (!(c >= '0' && c <= '9') )
-  {
-    return(0);
-  }
-  return (1);
- 
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }
-/*
-int main(void)
-{
-    printf("%i",ft_isdigit(122));
-    return(0);
-}
-*/

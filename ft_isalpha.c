@@ -5,20 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: delroudi <delroudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/24 19:47:36 by delroudi          #+#    #+#             */
-/*   Updated: 2026/09/24 20:04:54 by delroudi         ###   ########.fr       */
+/*   Created: 2026/09/24 18:15:33 by delroudi          #+#    #+#             */
+/*   Updated: 2026/10/03 17:31:00 by delroudi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
-
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
-  if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-  {
-    return(1);
-  }
-  return (0);
- 
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+		return (1);
+	return (0);
 }

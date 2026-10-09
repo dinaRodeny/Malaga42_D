@@ -5,68 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: delroudi <delroudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/08 17:17:02 by delroudi          #+#    #+#             */
-/*   Updated: 2026/09/29 22:58:21 by delroudi         ###   ########.fr       */
+/*   Created: 2026/09/24 18:15:33 by delroudi          #+#    #+#             */
+/*   Updated: 2026/10/03 17:31:00 by delroudi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-static int	skip_spaces(const char *str)
+int	ft_atoi(const char *str)
 {
-	int	i;
-    
-	i = 0;
-	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
-		i++;
-	return (i);
-}
-
-static int	get_sign(const char *str, int *i)
-{
-	int	sign;
+	int		sign;
+	int		result;
+	size_t	index;
 
 	sign = 1;
-	if (str[*i] == '+' || str[*i] == '-')
+	result = 0;
+	index = 0;
+	while (str[index] == ' ' || str[index] == '\n' || str[index] == '\t'
+		|| str[index] == '\r' || str[index] == '\v' || str[index] == '\f')
+		index++;
+	if (str[index] == '-' || str[index] == '+')
 	{
-		if (str[*i] == '-')
-			sign *= -1;
-		(*i)++;
+		if (str[index] == '-')
+			sign = -1;
+		index++;
 	}
-	return (sign);
-}
-
-static int	get_number(const char *str, int *i)
-{
-	int	number;
-
-	number = 0;
-	while (str[*i] >= '0' && str[*i] <= '9')
+	while (str[index] >= '0' && str[index] <= '9')
 	{
-		number = number * 10 + (str[*i] - '0');
-		(*i)++;
+		result = result * 10 + (str[index] - '0');
+		index++;
 	}
-	return (number);
+	return (result * sign);
 }
-
-int	ft_atoi( const char *str)
-{
-	 int 	i;
-	 int	sign;
-	 int	number;
-
-	i = skip_spaces(str);
-	sign = get_sign(str, &i);
-	number = get_number(str, &i);
-	return (number * sign);
-}
-/*
-int	main(void)
-{
-	char	x[] = " ---+--+1234ab567";
-	int		y;
-
-	y = ft_atoi(x);
-	printf("%d", y);
-}
-*/

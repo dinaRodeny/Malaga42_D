@@ -5,24 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: delroudi <delroudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/28 19:14:16 by delroudi          #+#    #+#             */
-/*   Updated: 2026/09/28 20:25:43 by delroudi         ###   ########.fr       */
+/*   Created: 2026/09/24 18:15:33 by delroudi          #+#    #+#             */
+/*   Updated: 2026/10/03 17:31:00 by delroudi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+#include "libft.h"
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-   size_t i;
-   i=0;
-   while((s1[i]||s2[i])&&(i<n))
-   {
-     
-      if((unsigned char) s1[i]!=(unsigned char) s2[i])
-          return ((unsigned char) s1[i]-(unsigned char) s2[i]);
-      i++;
-   }
-   return (0);
+	size_t	index;
+
+	index = 0;
+	while (index < n && (s1[index] != '\0' || s2[index] != '\0'))
+	{
+		if ((unsigned char)s1[index] != (unsigned char)s2[index])
+			return ((unsigned char)s1[index] - (unsigned char)s2[index]);
+		index++;
+	}
+	return (0);
 }
-
-

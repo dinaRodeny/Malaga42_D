@@ -5,47 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: delroudi <delroudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/24 22:58:19 by delroudi          #+#    #+#             */
-/*   Updated: 2026/09/27 01:23:26 by delroudi         ###   ########.fr       */
+/*   Created: 2026/09/24 18:15:33 by delroudi          #+#    #+#             */
+/*   Updated: 2026/10/03 17:31:00 by delroudi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
-size_t	ft_strlen(const char *s)
-{
-    int i =0;
-    while(s[i])   
-        i++;
-    return(i);
-}
+#include "libft.h"
+
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-    
-    size_t dst_size =ft_strlen(dst);
-    size_t src_size =ft_strlen(src);   
-	size_t i=0;    
-	  
-	if(dstsize<=dst_size)
-	  return dstsize + src_size;
-	  
-	while(i+dst_size <dstsize-1&& src[i])
+	size_t	dst_len;
+	size_t	src_len;
+	size_t	index;
+
+	if (dst == NULL || src == NULL)
+		return (0);
+	dst_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
+	if (dstsize <= dst_len)
+		return (src_len + dstsize);
+	index = 0;
+	while (src[index] != '\0' && dst_len + index + 1 < dstsize)
 	{
-		dst[i+dst_size]=src[i];
-		i++;
+		dst[dst_len + index] = src[index];
+		index++;
 	}
-
-		dst[i+dst_size]= '\0';
-
-	
-    return dst_size+src_size;
+	dst[dst_len + index] = '\0';
+	return (dst_len + src_len);
 }
-/*
-int	main(void)
-{
-	char str[4] = "Hel\0";
-    const char str1[] = "Didi you are so strong";
-	printf("String: %s\n", str);
-	printf("Length: %zu\n", ft_strlcat(str,str1,sizeof(str)));
-	    printf("After: %s\n", str);
-	return (0);
-}*/

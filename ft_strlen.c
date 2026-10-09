@@ -5,24 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: delroudi <delroudi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/24 22:15:55 by delroudi          #+#    #+#             */
-/*   Updated: 2026/09/24 22:28:11 by delroudi         ###   ########.fr       */
+/*   Created: 2026/09/24 18:15:33 by delroudi          #+#    #+#             */
+/*   Updated: 2026/10/03 17:31:00 by delroudi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
+
 size_t	ft_strlen(const char *s)
 {
-    int i =0;
-    while(s[i])   
-        i++;
-    return(i);
-}
-int	main(void)
-{
-	const char *str = "Hello, World!";
+	size_t	len;
 
-	printf("String: %s\n", str);
-	printf("Length: %zu\n", ft_strlen(str));
-	return (0);
+	len = 0;
+	while (s[len] != '\0')
+		len++;
+	return (len);
 }

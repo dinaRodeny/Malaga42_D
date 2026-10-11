@@ -1,3 +1,326 @@
+
+# 📚 Libft — Mandatory Functions
+
+# 1. Character Checks
+
+## 1. `ft_isalpha`
+
+### 📚 What to study first
+- Characters (`char`)
+- ASCII table
+- `if` statements
+- Comparison operators (`>=`, `<=`, `&&`, `||`)
+
+### 🎯 Purpose
+Checks whether a character is an alphabetic letter (`A-Z` or `a-z`).
+
+---
+
+## 2. `ft_isdigit`
+
+### 📚 What to study first
+- Characters (`char`)
+- ASCII table
+- Comparison operators
+- `if` statements
+
+### 🎯 Purpose
+Checks whether a character is a digit (`0-9`).
+
+---
+
+## 3. `ft_isalnum`
+
+### 📚 What to study first
+- `ft_isalpha`
+- `ft_isdigit`
+- Logical operators (`||`, `&&`)
+
+### 🎯 Purpose
+Checks whether a character is an alphabetic letter or a digit.
+
+---
+
+## 4. `ft_isascii`
+
+### 📚 What to study first
+- Characters (`char`)
+- ASCII table
+- Integer ranges
+- Comparison operators
+
+### 🎯 Purpose
+Checks whether a value belongs to the ASCII range (`0-127`).
+
+---
+
+## 5. `ft_isprint`
+
+### 📚 What to study first
+- ASCII table
+- Printable characters
+- Comparison operators
+
+### 🎯 Purpose
+Checks whether a character is printable (`32-126`).
+
+---
+
+# 2. String Length and Memory
+
+## 6. `ft_strlen`
+
+### 📚 What to study first
+- Strings and `'\0'`
+- Pointers (`*`)
+- Array indexing
+- Loops (`while`)
+- Counters
+
+### 🎯 Purpose
+Returns the length of a string, excluding the terminating `'\0'`.
+
+---
+
+## 7. `ft_memset`
+
+### 📚 What to study first
+- Pointers (`void *`)
+- Type casting
+- Memory addresses
+- Loops
+- Bytes and `sizeof`
+
+### 🎯 Purpose
+Fills a memory area with a specified byte.
+
+---
+
+## 8. `ft_bzero`
+
+### 📚 What to study first
+- Pointers
+- Memory addresses
+- Loops
+- `ft_memset`
+
+### 🎯 Purpose
+Sets a specified number of bytes to zero.
+
+---
+
+## 9. `ft_memcpy`
+
+### 📚 What to study first
+- Pointers (`void *`)
+- Type casting
+- Memory addresses
+- Loops
+- Bytes and memory copying
+
+### 🎯 Purpose
+Copies a specified number of bytes from one memory area to another. The areas must not overlap.
+
+---
+
+## 10. `ft_memmove`
+
+### 📚 What to study first
+- Pointers
+- Memory addresses
+- Loops
+- `ft_memcpy`
+- Overlapping memory areas
+
+### 🎯 Purpose
+Copies bytes between memory areas, even when the areas overlap.
+
+---
+
+# 3. String Copy and Concatenation
+
+## 11. `ft_strlcpy`
+
+### 📚 What to study first
+- Strings and `'\0'`
+- Pointers
+- Array indexing
+- Loops
+- Buffer sizes
+- `ft_strlen`
+
+### 🎯 Purpose
+Copies a string into a destination buffer of a specified size, ensuring null termination when the size is greater than zero.
+
+---
+
+## 12. `ft_strlcat`
+
+### 📚 What to study first
+- Strings and `'\0'`
+- Pointers
+- Array indexing
+- Loops
+- Buffer sizes
+- `ft_strlen`
+- `ft_strlcpy`
+
+### 🎯 Purpose
+Appends a string to a destination string while respecting the specified buffer size.
+
+---
+
+# 4. Character Conversion
+
+## 13. `ft_toupper`
+
+### 📚 What to study first
+- Characters (`char`)
+- ASCII table
+- Integer values of characters
+- Conditional statements
+
+### 🎯 Purpose
+Converts a lowercase letter to uppercase.
+
+---
+
+## 14. `ft_tolower`
+
+### 📚 What to study first
+- Characters (`char`)
+- ASCII table
+- Integer values of characters
+- Conditional statements
+
+### 🎯 Purpose
+Converts an uppercase letter to lowercase.
+
+---
+
+# 5. String Search and Comparison
+
+## 15. `ft_strchr`
+
+### 📚 What to study first
+- Strings and `'\0'`
+- Pointers
+- Loops
+- Character comparison
+- `NULL`
+
+### 🎯 Purpose
+Finds the first occurrence of a character in a string.
+
+---
+
+## 16. `ft_strrchr`
+
+### 📚 What to study first
+- Strings and `'\0'`
+- Pointers
+- Loops
+- Character comparison
+- `ft_strchr`
+
+### 🎯 Purpose
+Finds the last occurrence of a character in a string.
+
+---
+
+## 17. `ft_strncmp`
+
+### 📚 What to study first
+- Strings and `'\0'`
+- Pointers
+- Loops
+- Character comparison
+- ASCII values
+- Unsigned characters
+
+### 🎯 Purpose
+Compares two strings up to a specified number of characters.
+
+---
+
+## 18. `ft_memchr`
+
+### 📚 What to study first
+- Pointers (`void *`)
+- Type casting
+- Memory addresses
+- Loops
+- Byte comparison
+
+### 🎯 Purpose
+Finds the first occurrence of a byte in a memory area.
+
+---
+
+## 19. `ft_memcmp`
+
+### 📚 What to study first
+- Pointers (`void *`)
+- Type casting
+- Memory addresses
+- Loops
+- Unsigned characters
+- Byte comparison
+
+### 🎯 Purpose
+Compares two memory areas byte by byte.
+
+---
+
+## 20. `ft_strnstr`
+
+### 📚 What to study first
+- Strings and `'\0'`
+- Pointers
+- Nested loops
+- Substrings
+- String comparison
+- Buffer lengths
+
+### 🎯 Purpose
+Finds the first occurrence of a substring within a string, searching up to a specified length.
+
+---
+
+# 6. String to Integer
+
+## 21. `ft_atoi`
+
+### 📚 What to study first
+- Strings and `'\0'`
+- Pointers
+- Loops
+- ASCII values
+- Character-to-digit conversion
+- Integer arithmetic
+- Whitespace characters
+- Positive and negative numbers
+
+### 🎯 Purpose
+Converts the beginning of a string into an integer.
+
+---
+
+# 🧠 Recommended Learning Order
+
+Study these concepts before implementing the functions:
+
+1. **C Basics:** Variables, data types, operators, and `if` statements.
+2. **Characters:** ASCII values and character comparisons.
+3. **Loops:** `while` loops and counters.
+4. **Arrays and Strings:** Indexing and the null terminator `'\0'`.
+5. **Pointers:** Addresses, dereferencing, and pointer arithmetic.
+6. **Memory:** `void *`, type casting, and byte manipulation.
+7. **String Operations:** Copying, concatenation, searching, and comparison.
+8. **Advanced Concepts:** Overlapping memory, nested loops, and integer conversion.
+
+**Key idea:** Understand the concepts first, then implement each function from scratch.
+
 # 📚 Libft — Linked Lists
 
 # 1. `ft_lstnew`(create)

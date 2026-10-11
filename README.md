@@ -122,4 +122,43 @@ HEAD | v +-----+------+ +-----+------+ +-----+------+ | N | next | --> | A | nex
 - `new->next = *lst` connects the new node to the existing list.
 - `*lst = new` updates the head.
 
+# 3. `ft_lstsize`
+## 📚 What to study first
+- Pointers (`*`)
+- Linked lists
+- Loops (`while`)
+- Counters (`unsigned int`)
+
+## 🎯 Purpose
+Counts the number of nodes in a linked list.
+
+## ⚙️ How it works
+
+1. Initialize `count` to `0`.
+2. Traverse the list, incrementing `count` for each node.
+3. Return the total count.
+
+## 📊 Drawing
+
+**Example:**
+
+lst | v +-----+------+ +-----+------+ +-----+------+ | A | next | --> | B | next | --> | C | NULL | +-----+------+ +-----+------+ +-----+------+
+
+
+**Counting:**
+
+[A] ------> [B] ------> [C] ------> NULL 1 2 3
+
+Total: 3 nodes
+
+
+## 🧠 Remember
+- `count++` increments the counter.
+- `lst = lst->next` moves to the next node.
+- The loop stops when `lst` becomes `NULL`.
+- An empty list returns `0`.
+
+**Key idea:** Traverse → Count → Return.
+
+
 **Key idea:** Connect → Update the head.

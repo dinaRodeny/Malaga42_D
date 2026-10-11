@@ -122,7 +122,7 @@ HEAD | v +-----+------+ +-----+------+ +-----+------+ | N | next | --> | A | nex
 - `new->next = *lst` connects the new node to the existing list.
 - `*lst = new` updates the head.
 
-# 3. `ft_lstsize`
+# 3. `ft_lstsize`(Count)
 ## 📚 What to study first
 - Pointers (`*`)
 - Linked lists

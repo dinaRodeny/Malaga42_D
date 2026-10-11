@@ -160,5 +160,35 @@ Total: 3 nodes
 
 **Key idea:** Traverse → Count → Return.
 
+# 4. `ft_lstlast`
+
+## 📚 What to study first
+- Pointers (`*`)
+- Structures (`struct`)
+- Linked lists
+- Loops (`while`)
+
+## 🎯 Purpose
+Returns the last node of a linked list.
+
+## ⚙️ How it works
+1. Check if the list is empty.
+2. Traverse the list until `next` is `NULL`.
+3. Return the last node.
+
+## 📊 Drawing
+
+**Example:**
+
+lst | v +-----+------+ +-----+------+ +-----+------+ | A | next | --> | B | next | --> | C | NULL | +-----+------+ +-----+------+ +-----+------+ ^ | LAST
+
+
+## 🧠 Remember
+- `lst == NULL`: The list is empty.
+- `lst->next == NULL`: The current node is the last node.
+- `lst = lst->next`: Moves to the next node.
+
+**Key idea:** Traverse → Find the last node → Return it.
+
 
 **Key idea:** Connect → Update the head.

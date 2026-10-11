@@ -405,6 +405,522 @@ A separate memory allocation.
 
 **Key idea:** Measure → Allocate → Copy → Return.
 
+
+
+# 24. `ft_substr`
+
+## 📚 What to study first
+- Pointers (`*`)
+- Strings and `'\0'`
+- Array indexing
+- `ft_strlen`
+- Dynamic memory allocation (`malloc`)
+- Loops (`while`)
+
+## 🎯 Purpose
+Creates a new string containing part of the original string.
+
+## ⚙️ How it works
+1. Check the starting index `start`.
+2. Calculate how many characters can be copied, up to `len`.
+3. Allocate memory for the substring and `'\0'`.
+4. Copy the characters into the new string.
+5. Return the substring.
+
+## 📊 Drawing
+
+**Example:**
+
+ft_substr("Hello World", 6, 5);
+
+
+**Original string:**
+
+Index: 0 1 2 3 4 5 6 7 8 9 10 | | | | | | | | | | | String: H e l l o W o r l d ^ start
+
+
+**Result:**
+
+substring | v +-----+-----+-----+-----+------+ | 'W' | 'o' | 'r' | 'l' | '\0' | +-----+-----+-----+-----+------+
+
+
+## 🧠 Remember
+- `start` is the index where copying begins.
+- `len` is the maximum number of characters to copy.
+- Allocate one extra byte for `'\0'`.
+- If `start` is beyond the end of the string, return an empty string if allocation succeeds.
+- Return `NULL` if `malloc()` fails.
+
+**Key idea:** Find the start → Allocate → Copy → Terminate → Return.
+
+# 25. `ft_strjoin`
+
+## 📚 What to study first
+- Pointers (`*`)
+- Strings and `'\0'`
+- `ft_strlen`
+- Dynamic memory allocation (`malloc`)
+- Loops (`while`)
+- String copying
+
+## 🎯 Purpose
+Creates a new string by joining `s1` and `s2`.
+
+## ⚙️ How it works
+1. Calculate the lengths of `s1` and `s2`.
+2. Allocate enough memory for both strings and `'\0'`.
+3. Copy `s1` into the new string.
+4. Copy `s2` immediately after `s1`.
+5. Return the new string.
+
+## 📊 Drawing
+
+**Example:**
+
+ft_strjoin("Hello ", "World");
+
+
+**Before:**
+
+s1 s2 +------+------+ +------+------+------+ | H | i | ... | W | o | ... | +------+------+ +------+------+------+
+
+
+**After:**
+
+new_string | v +------+------+------+------+------+------+------+ | H | e | ... | W | o | ... | '\0' | +------+------+------+------+------+------+------+
+
+
+**Result:**
+
+"Hello World"
+
+
+## 🧠 Remember
+- `s1` is the prefix.
+- `s2` is the suffix.
+- Allocate `ft_strlen(s1) + ft_strlen(s2) + 1` bytes.
+- The final `1` is for the terminating `'\0'`.
+- Return `NULL` if `malloc()` fails.
+- The original strings remain unchanged.
+
+**Key idea:** Measure → Allocate → Copy both strings → Return.
+
+# 26. `ft_strtrim`
+
+## 📚 What to study first
+- Pointers (`*`)
+- Strings and `'\0'`
+- Loops (`while`)
+- Character comparison
+- `ft_strlen`
+- Dynamic memory allocation (`malloc`)
+
+## 🎯 Purpose
+Creates a new string by removing characters from `set` at the beginning and end of `s1`.
+
+## ⚙️ How it works
+1. Find the first character in `s1` that is not in `set`.
+2. Find the last character in `s1` that is not in `set`.
+3. Allocate memory for the remaining characters and `'\0'`.
+4. Copy the trimmed substring into the new string.
+5. Return the new string.
+
+## 📊 Drawing
+
+**Example:**
+
+ft_strtrim("xxxHello Worldxxx", "x");
+
+
+**Before:**
+
+s1 | v +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+ | x | x | x | H | e | l | l | o | | W | o | r | l | d | x | x | x | +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+ ^ ^ ^ ^ ^ ^ Remove Remove
+
+
+**After:**
+
+trimmed string | v +---+---+---+---+---+---+---+---+---+---+---+---+---+ | H | e | l | l | o | | W | o | r | l | d | \0| | +---+---+---+---+---+---+---+---+---+---+---+---+---+
+
+
+**Result:**
+
+"Hello World"
+
+
+## 🧠 Remember
+- `s1` is the original string.
+- `set` contains the characters to remove.
+- Only characters at the beginning and end are removed.
+- Characters inside the string remain unchanged.
+- Allocate enough memory for the trimmed string and `'\0'`.
+- Return `NULL` if `malloc()` fails.
+
+**Key idea:** Find boundaries → Allocate → Copy → Return.
+# 27. `ft_split`
+
+## 📚 What to study first
+- Pointers (`*` and `**`)
+- Strings and `'\0'`
+- Arrays of strings (`char **`)
+- Loops (`while`)
+- Dynamic memory allocation (`malloc`)
+- Memory deallocation (`free`)
+- Counting words and delimiters
+
+## 🎯 Purpose
+Splits a string into an array of strings using a delimiter character.
+
+## ⚙️ How it works
+1. Count the words separated by `c`.
+2. Allocate memory for the array of string pointers, including the final `NULL`.
+3. Find each word, skipping consecutive delimiters.
+4. Allocate memory for each word and copy it.
+5. Set the last array element to `NULL`.
+6. If an allocation fails, free everything already allocated and return `NULL`.
+
+## 📊 Drawing
+
+**Example:**
+
+ft_split("Hello world 42", ' ');
+
+
+**Original string:**
+
+"Hello world 42" ^ ^ space space
+
+
+**Result:**
+
+result (char ) | v +-----------+ | result[0] | -----> "Hello\0" +-----------+ | result[1] | -----> "world\0" +-----------+ | result[2] | -----> "42\0" +-----------+ | result[3] | -----> NULL +-----------+
+
+
+Each word has its **own memory allocation**, and the array ends with `NULL`.
+
+## 🧠 Remember
+- `s` is the original string.
+- `c` is the delimiter.
+- Consecutive delimiters do not create empty words.
+- `char **` represents an array of string pointers.
+- Every word must be allocated independently.
+- The array itself must also be allocated dynamically.
+- The final pointer must be `NULL`.
+- If allocation fails, free all previously allocated strings and the array.
+
+## 🗑️ How to free the result
+
+int i = 0;
+
+while (result[i]) free(result[i++]); free(result);
+
+
+**Key idea:** Count words → Allocate the array → Extract words → Add `NULL` → Return.
+
+# 28. `ft_itoa`
+
+## 📚 What to study first
+- Pointers (`*`)
+- Strings and `'\0'`
+- Integer arithmetic
+- Negative numbers
+- Dynamic memory allocation (`malloc`)
+- Loops (`while`)
+- ASCII digits (`'0'` to `'9'`)
+
+## 🎯 Purpose
+Converts an integer into a string, including negative numbers.
+
+## ⚙️ How it works
+1. Handle the special case `0`.
+2. Check whether the number is negative.
+3. Count the digits to determine the required memory.
+4. Allocate memory for the digits, the optional `-` sign, and `'\0'`.
+5. Convert each digit into a character.
+6. Add the negative sign if needed.
+7. Return the resulting string.
+
+## 📊 Drawing
+
+**Example:**
+
+ft_itoa(-123);
+
+
+**Before:**
+
+Integer (int) | v -123
+
+
+**After:**
+
+String (char *) | v +-----+-----+-----+-----+------+ | '-' | '1' | '2' | '3' | '\0' | +-----+-----+-----+-----+------+
+
+
+**Result:**
+
+"-123"
+
+
+## 🧠 Remember
+- `n` is the integer to convert.
+- Negative numbers need a `'-'` character.
+- Allocate enough memory for every digit, the optional sign, and `'\0'`.
+- Handle `0` separately.
+- Be careful with `INT_MIN`, because its positive value cannot be represented by an `int`.
+- Return `NULL` if `malloc()` fails.
+
+**Key idea:** Count digits → Allocate → Convert → Add sign → Return.
+
+# 29. `ft_strmapi`
+
+## 📚 What to study first
+- Pointers (`*`)
+- Strings and `'\0'`
+- Function pointers
+- Array indexing
+- Loops (`while`)
+- Dynamic memory allocation (`malloc`)
+
+## 🎯 Purpose
+Creates a new string by applying a function to each character, passing its index and character as arguments.
+
+## ⚙️ How it works
+1. Calculate the length of `s`.
+2. Allocate memory for the new string and `'\0'`.
+3. Visit each character and pass its index and value to `f`.
+4. Store the returned character in the new string.
+5. Add `'\0'` and return the new string.
+
+## 📊 Drawing
+
+**Example:** Apply a function that converts lowercase letters to uppercase.
+
+Original string: "cat"
+
+Index: 0 1 2 | | | v v v +---+ +---+ +---+ | c | | a | | t | +---+ +---+ +---+ | | | f(0,c) f(1,a) f(2,t) | | | v v v +---+ +---+ +---+ | C | | A | | T | +---+ +---+ +---+
+
+Result: "CAT"
+
+
+## 🧠 Remember
+- `s` is the original string.
+- `f` is the function applied to each character.
+- The index starts at `0`.
+- `f` receives the index and character, then returns a character.
+- The original string remains unchanged.
+- Return `NULL` if `malloc()` fails.
+
+**Key idea:** Allocate → Apply `f` to each character → Terminate → Return.
+ 30. `ft_striteri`
+
+## 📚 What to study first
+- Pointers (`*`)
+- Strings and `'\0'`
+- Function pointers
+- Array indexing
+- Loops (`while`)
+- Passing addresses to functions
+
+## 🎯 Purpose
+Applies a function to each character of a string, allowing the function to modify it.
+
+## ⚙️ How it works
+1. Start at index `0`.
+2. Pass the index and address of the current character to `f`.
+3. Move to the next character.
+4. Repeat until `'\0'` is reached.
+
+## 📊 Drawing
+
+**Example:** Convert each character to uppercase.
+
+Original string: "cat"
+
+f(0, &s[0]) | v +---+---+---+ | c | a | t | \0 +---+---+---+ | v +---+---+---+ | C | a | t | \0 +---+---+---+
+
+f(1, &s[1]) | v +---+---+---+ | C | A | t | \0 +---+---+---+
+
+f(2, &s[2]) | v +---+---+---+ | C | A | T | \0 +---+---+---+
+
+Result: "CAT"
+
+
+## 🧠 Remember
+- `s` is the original string.
+- `f` is the function applied to each character.
+- The index starts at `0`.
+- `&s[i]` passes the character's address, allowing it to be modified.
+- `ft_striteri` returns nothing (`void`).
+
+**Key idea:** Visit → Pass index and address → Modify → Repeat.
+
+# 31. `ft_putchar_fd`
+
+## 📚 What to study first
+- Characters (`char`)
+- File descriptors (`fd`)
+- Standard input and output
+- The `write()` function
+
+## 🎯 Purpose
+Writes a single character to a specified file descriptor.
+
+## ⚙️ How it works
+1. Receive a character `c` and a file descriptor `fd`.
+2. Use `write()` to output one byte.
+3. Return nothing (`void`).
+
+## 📊 Drawing
+
+**Example:**
+
+ftputcharfd('A', 1);
+
+
+**Result:**
+
+ftputcharfd('A', 1) | v +---------+ | write() | +---------+ | v Standard Output | v A
+
+
+## 🧠 Remember
+- `c` is the character to output.
+- `fd` specifies where to write.
+- `0` = standard input.
+- `1` = standard output (terminal).
+- `2` = standard error.
+- `write(fd, &c, 1)` writes one byte.
+- The function returns nothing.
+
+**Key idea:** Character → `write()` → File descriptor.
+# 32. `ft_putstr_fd`
+
+## 📚 What to study first
+- Strings and `'\0'`
+- Pointers (`*`)
+- File descriptors (`fd`)
+- The `write()` function
+- `ft_strlen`
+
+## 🎯 Purpose
+Writes a string to a specified file descriptor.
+
+## ⚙️ How it works
+1. Check that the string exists.
+2. Calculate the string's length.
+3. Use `write()` to output the string.
+4. Return nothing (`void`).
+
+## 📊 Drawing
+
+**Example:**
+
+ftputstrfd("Hello", 1);
+
+
+**Result:**
+
+s = "Hello" | v +------------+ | write() | +------------+ | v Standard Output | v Hello
+
+
+## 🧠 Remember
+- `s` is the string to output.
+- `fd` specifies where to write.
+- `0` = standard input.
+- `1` = standard output (terminal).
+- `2` = standard error.
+- `write(fd, s, length)` writes the string.
+- The function returns nothing.
+
+**Key idea:** String → `write()` → File descriptor.
+
+
+# 33. `ft_putendl_fd`
+
+## 📚 What to study first
+- Strings and `'\0'`
+- Pointers (`*`)
+- File descriptors (`fd`)
+- The `write()` function
+- Newline character (`'\n'`)
+
+## 🎯 Purpose
+Writes a string to a specified file descriptor, followed by a newline.
+
+## ⚙️ How it works
+1. Write the string `s`.
+2. Write a newline character (`'\n'`).
+3. Return nothing (`void`).
+
+## 📊 Drawing
+
+**Example:**
+
+ftputendlfd("Hello", 1);
+
+
+**Result:**
+
+s = "Hello" | v +-------------+ | write() | +-------------+ | v Standard Output | v Hello | v Newline (\n)
+
+
+**Output:**
+
+Hello
+
+
+## 🧠 Remember
+- `s` is the string to output.
+- `fd` specifies where to write.
+- `1` = standard output (terminal).
+- `2` = standard error.
+- `write(fd, s, length)` writes the string.
+- `write(fd, "\n", 1)` writes the newline.
+- The function returns nothing.
+
+**Key idea:** Write the string → Write `'\n'`.
+# 34. `ft_putnbr_fd`
+
+## 📚 What to study first
+- Integers (`int`)
+- Characters and ASCII values
+- Recursion or loops (`while`)
+- Negative numbers
+- File descriptors (`fd`)
+- The `write()` function
+
+## 🎯 Purpose
+Writes an integer to a specified file descriptor.
+
+## ⚙️ How it works
+1. Check if the number is negative.
+2. Convert each digit into a character.
+3. Write each character using `write()`.
+4. Handle `INT_MIN` correctly.
+5. Return nothing (`void`).
+
+## 📊 Drawing
+
+**Example:**
+
+ftputnbrfd(-123, 1);
+
+
+**Result:**
+
+Integer: -123 | v +--------------+ | Convert digits| +--------------+ | v +--------------+ | write() | +--------------+ | v Standard Output | v -123
+
+
+## 🧠 Remember
+- `n` is the integer to output.
+- `fd` specifies where to write.
+- `1` = standard output (terminal).
+- `2` = standard error.
+- Each digit must be converted into a character before writing.
+- Handle negative numbers, including `INT_MIN`.
+- The function returns nothing.
+
+**Key idea:** Convert digits → Write characters → Display the integer.
+
 # 📚 Libft — Linked Lists
 
 # 1. `ft_lstnew`(create)

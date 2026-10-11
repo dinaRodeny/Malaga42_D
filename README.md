@@ -1,155 +1,125 @@
-t_lstnew
-📚 What to study first
+# 📚 Libft — Linked Lists
 
-    Pointers (*)
-    Dynamic memory allocation (malloc)
-    Structures (struct)
-    Linked lists and NULL
+# 1. `ft_lstnew`
 
-🎯 Purpose
+## 📖 What to study first
+- Pointers (`*`)
+- Dynamic memory allocation (`malloc`)
+- Structures (`struct`)
+- Linked lists and `NULL`
 
-Allocates and initializes a new linked-list node with the given content.
+## 🎯 Purpose
+Creates a new node, stores the given content, and initializes `next` to `NULL`.
 
-⭐ How it works
-1. Allocate memory
+## ⚙️ How it works
 
-new_node = malloc(sizeof(t_list) * 1);
+### Step 1 — Allocate memory
 
-Allocates memory for one node.
-2. Check allocation
+newnode = malloc(sizeof(tlist));
 
-if (!new_node)
-    return (NULL);
+Allocates enough memory for one node.
 
-If allocation fails, return NULL.
-3. Store the content
+### Step 2 — Check allocation
+
+if (!new_node) return (NULL);
+
+If allocation fails, return `NULL`.
+
+### Step 3 — Store the content
 
 new_node->content = content;
 
-Stores the given content in the node.
-4. Initialize the next pointer
+Stores the given content pointer in the node.
+
+### Step 4 — Initialize the next pointer
 
 new_node->next = NULL;
 
 The node does not point to another node yet.
-5. Return the new node
+
+### Step 5 — Return the node
 
 return (new_node);
 
-Returns the address of the created node.
-📊 Drawing
+Returns the address of the new node.
 
-Example:
+## 📊 Drawing
 
-t_list *node = ft_lstnew("Hello");
+**Example:**
 
-Step 1: Allocate memory
+tlist node = ft_lstnew("Hello");
 
-new_node
-   |
-   v
 
-   content   
+**Result:**
 
-    next     
-+-------------+
+node | v +-----------+ | content | ----> "Hello" +-----------+ | next | ----> NULL +-----------+
 
-Step 2: Initialize the node
 
-node
- |
- v
-+-------------+
-|   "Hello"   |  content
-+-------------+
-|    NULL     |  next
-+-------------+
+## 🧠 Remember
+- `malloc()` allocates memory.
+- `content` stores the given content pointer.
+- `next = NULL` marks the end of the list.
+- `return (new_node)` returns the created node.
 
-🧠 Remember
+**Key idea:** Allocate → Initialize → Return.
 
-    malloc() allocates memory.
-    content stores the given data.
-    next = NULL indicates that the node is not connected to another node.
-    return (new_node) returns the created node.
+---
 
-Key idea: Allocate memory, initialize the node, and return it.
-t_lstadd_front
-📚 What to study first
+# 2. `ft_lstadd_front`
 
-    Pointers (* and &)
-    Double pointers (**)
-    Structures (struct)
-    Linked lists and NULL
+## 📖 What to study first
+- Pointers (`*` and `&`)
+- Double pointers (`**`)
+- Structures (`struct`)
+- Linked lists and `NULL`
 
-🎯 Purpose
-
+## 🎯 Purpose
 Adds a new node at the beginning of a linked list.
-⭐ How it works
-1. Check for NULL
 
-if (!lst || !new)
-    return;
+## ⚙️ How it works
 
-If lst or new is NULL, stop the function.
-2. Connect the new node
+### Step 1 — Check for NULL
+
+if (!lst || !new) return;
+
+If `lst` or `new` is `NULL`, stop the function.
+
+### Step 2 — Connect the new node
 
 new->next = *lst;
 
-Make the new node point to the current first node.
+Makes the new node point to the current first node.
 
-Before:
+**Before:**
 
-HEAD
- |
- v
-+-----+------+     +-----+------+
-|  A  | next | --> |  B  | NULL |
-+-----+------+     +-----+------+
+HEAD | v +-----+------+ +-----+------+ | A | next | --> | B | NULL | +-----+------+ +-----+------+
 
-NEW
- |
- v
-+-----+------+
-|  N  | NULL |
-+-----+------+
+NEW | v +-----+------+ | N | NULL | +-----+------+
 
-After new->next = *lst:
 
-HEAD
- |
- v
-+-----+------+     +-----+------+
-|  A  | next | --> |  B  | NULL |
-+-----+------+     +-----+------+
+**After `new->next = *lst`:**
 
-NEW
- |
- v
-+-----+------+ 
-|  N  | next | -----> A
-+-----+------+
+HEAD | v +-----+------+ +-----+------+ | A | next | --> | B | NULL | +-----+------+ +-----+------+
 
-3. Update the head
+NEW | v +-----+------+ | N | next | ----> A +-----+------+
+
+
+### Step 3 — Update the head
 
 *lst = new;
 
-Make the new node the first node.
+Makes the new node the first node.
 
-Final result:
+**Final result:**
 
-HEAD
- |
- v
-+-----+------+     +-----+------+     +-----+------+
-|  N  | next | --> |  A  | next | --> |  B  | NULL |
-+-----+------+     +-----+------+     +-----+------+
+HEAD | v +-----+------+ +-----+------+ +-----+------+ | N | next | --> | A | next | --> | B | NULL | +-----+------+ +-----+------+ +-----+------+
 
-🧠 Remember
 
-    lst: Address of the head pointer.
-    *lst: Current first node.
-    new: New node to insert.
-    new->next = *lst: Connect the new node to the existing list.
-    *lst = new: Update the head.
+## 🧠 Remember
+- `lst` is the address of the head pointer.
+- `*lst` is the current first node.
+- `new` is the node to insert.
+- `new->next = *lst` connects the new node to the existing list.
+- `*lst = new` updates the head.
 
-Key idea: Connect first, update the head second.
+**Key idea:** Connect → Update the head.

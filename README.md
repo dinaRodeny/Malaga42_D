@@ -189,6 +189,44 @@ lst | v +-----+------+ +-----+------+ +-----+------+ | A | next | --> | B | next
 - `lst = lst->next`: Moves to the next node.
 
 **Key idea:** Traverse → Find the last node → Return it.
+# 5. `ft_lstadd_back`
+
+## 📚 What to study first
+- Pointers (`*` and `&`)
+- Double pointers (`**`)
+- Linked lists
+- Loops (`while`)
+
+## 🎯 Purpose
+Adds a new node at the end of a linked list.
+
+## ⚙️ How it works
+1. If the list is empty, make `new` the first node.
+2. Otherwise, traverse the list to find the last node.
+3. Connect the last node to `new`.
+
+## 📊 Drawing
+
+**Before:**
+
+HEAD | v +-----+------+ +-----+------+ | A | next | --> | B | NULL | +-----+------+ +-----+------+
+
+NEW | v +-----+------+ | C | NULL | +-----+------+
+
+
+**After:**
+
+HEAD | v +-----+------+ +-----+------+ +-----+------+ | A | next | --> | B | next | --> | C | NULL | +-----+------+ +-----+------+ +-----+------+
+
+
+## 🧠 Remember
+- `lst`: Address of the head pointer.
+- `*lst`: First node of the list.
+- `new`: Node to add.
+- `last->next = new`: Connects the new node to the end.
+
+**Key idea:** Find the last node → Connect the new node.
+
 
 
 **Key idea:** Connect → Update the head.

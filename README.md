@@ -264,6 +264,126 @@ NODE 1: FREED
 
 **Key idea:** Delete the content → Free the node → Keep the next node.
 
+# 7. `ft_lstclear`
+
+## 📚 What to study first
+- Pointers (`*` and `&`)
+- Double pointers (`**`)
+- Linked lists
+- Function pointers
+- Dynamic memory management (`free`)
+
+## 🎯 Purpose
+Deletes and frees every node in the list, then sets the head pointer to `NULL`.
+
+## ⚙️ How it works
+1. Check if the list exists.
+2. Save the next node.
+3. Delete the current node's content using `del` and free the node.
+4. Move to the next node and repeat.
+5. Set `*lst` to `NULL`.
+
+## 📊 Drawing
+
+**Before:**
+
+HEAD | v +---------+------+ +---------+------+ +---------+------+ | Content | next | --> | Content | next | --> | Content | NULL | +---------+------+ +---------+------+ +---------+------+
+
+
+**After `ft_lstclear(&head, del)`:**
+
+HEAD | v NULL
+
+All nodes and their contents have been freed.
+
+
+## 🧠 Remember
+- `del` frees each node's content.
+- `free()` frees each node.
+- Save `next` before freeing the current node.
+- `*lst = NULL` resets the head pointer.
+
+**Key idea:** Save next → Delete current → Repeat → Set head to `NULL`.
+
+# 8. `ft_lstiter`
+
+## 📚 What to study first
+- Pointers (`*`)
+- Structures (`struct`)
+- Linked lists
+- Function pointers
+- Loops (`while`)
+
+## 🎯 Purpose
+Applies a function to the content of every node in a linked list.
+
+## ⚙️ How it works
+1. Check if the list exists.
+2. Apply `f` to the current node's content.
+3. Move to the next node.
+4. Repeat until the end of the list.
+
+## 📊 Drawing
+
+**Before:**
+
+HEAD | v +---------+------+ +---------+------+ +---------+------+ | "hello" | next | --> | "world" | next | --> | "42" | NULL | +---------+------+ +---------+------+ +---------+------+
+
+
+**After applying `f` (example: converting content to uppercase):**
+
+HEAD | v +---------+------+ +---------+------+ +---------+------+ | "HELLO" | next | --> | "WORLD" | next | --> | "42" | NULL | +---------+------+ +---------+------+ +---------+------+
+
+
+## 🧠 Remember
+- `f(lst->content)` applies the function to the current node's content.
+- `lst = lst->next` moves to the next node.
+- The loop stops when `lst` becomes `NULL`.
+- `ft_lstiter` does not create or delete nodes.
+
+**Key idea:** Apply the function → Move to the next node → Repeat.
+# 9. `ft_lstmap`
+
+## 📚 What to study first
+- Pointers (`*`)
+- Function pointers
+- Linked lists
+- Dynamic memory allocation (`malloc`)
+- Memory deallocation (`free`)
+
+## 🎯 Purpose
+Creates a new list by applying a function to each node's content, leaving the original list unchanged.
+
+## ⚙️ How it works
+1. Traverse the original list.
+2. Apply `f` to the current node's content.
+3. Create a new node with the transformed content.
+4. Add the new node to the new list.
+5. If allocation fails, use `del` to free the necessary content and nodes.
+6. Return the new list.
+
+## 📊 Drawing
+
+**Original list:**
+
+HEAD | v +-----+------+ +-----+------+ +-----+------+ | 1 | next | --> | 2 | next | --> | 3 | NULL | +-----+------+ +-----+------+ +-----+------+
+
+
+**After applying `f` (example: multiplying each number by 2):**
+
+NEW LIST | v +-----+------+ +-----+------+ +-----+------+ | 2 | next | --> | 4 | next | --> | 6 | NULL | +-----+------+ +-----+------+ +-----+------+
+
+
+The original list remains unchanged.
+
+## 🧠 Remember
+- `f` transforms each node's content.
+- `malloc()` allocates memory for new nodes.
+- `del` frees content when necessary, especially if an allocation fails.
+- The new list is separate from the original list.
+- Returns the head of the new list, or `NULL` if allocation fails.
+
+**Key idea:** Transform → Create → Connect → Return.
 
 
 **Key idea:** Connect → Update the head.

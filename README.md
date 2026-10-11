@@ -48,10 +48,10 @@ Step 1: Allocate memory
 new_node
    |
    v
-+-------------+
-|   content   |
-+-------------+
-|    next     |
+
+   content   
+
+    next     
 +-------------+
 
 Step 2: Initialize the node

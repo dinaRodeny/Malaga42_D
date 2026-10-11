@@ -320,6 +320,90 @@ Study these concepts before implementing the functions:
 8. **Advanced Concepts:** Overlapping memory, nested loops, and integer conversion.
 
 **Key idea:** Understand the concepts first, then implement each function from scratch.
+# 22. `ft_calloc`
+
+## 📚 What to study first
+- Pointers (`*`)
+- Dynamic memory allocation (`malloc`)
+- `free()`
+- `sizeof`
+- Memory initialization
+- `size_t`
+
+## 🎯 Purpose
+Allocates memory for an array and initializes all its bytes to zero.
+
+## ⚙️ How it works
+1. Calculate the total memory required.
+2. Allocate memory using `malloc()`.
+3. Check whether allocation failed.
+4. Initialize the allocated memory to zero.
+5. Return the allocated memory.
+
+## 📊 Drawing
+
+**Example:**
+
+int *arr = ft_calloc(3, sizeof(int));
+
+
+**Result:**
+
+arr | v +------+------+------+ | 0 | 0 | 0 | +------+------+------+
+
+
+## 🧠 Remember
+- `malloc()` allocates memory but does not initialize it.
+- `ft_calloc()` initializes all allocated bytes to zero.
+- `nmemb` represents the number of elements.
+- `size` represents the size of each element.
+- Return `NULL` if allocation fails or the requested size cannot be represented safely.
+
+**Key idea:** Allocate → Initialize to zero → Return.
+
+---
+
+# 23. `ft_strdup`
+
+## 📚 What to study first
+- Pointers (`*`)
+- Strings and `'\0'`
+- `ft_strlen`
+- Dynamic memory allocation (`malloc`)
+- Loops (`while`)
+- Copying strings
+
+## 🎯 Purpose
+Creates a new string by duplicating the contents of an existing string.
+
+## ⚙️ How it works
+1. Calculate the original string's length.
+2. Allocate enough memory for the characters and `'\0'`.
+3. Check whether allocation failed.
+4. Copy the original string into the new memory.
+5. Return the new string.
+
+## 📊 Drawing
+
+**Original string:**
+
+str | v +-----+-----+-----+------+ | 'H' | 'i' | '!' | '\0' | +-----+-----+-----+------+
+
+
+**Duplicated string:**
+
+strdup | v +-----+-----+-----+------+ | 'H' | 'i' | '!' | '\0' | +-----+-----+-----+------+
+
+A separate memory allocation.
+
+
+## 🧠 Remember
+- `malloc()` allocates memory for the duplicate.
+- `ft_strlen(str) + 1` accounts for the terminating `'\0'`.
+- The original string remains unchanged.
+- The returned string must eventually be freed using `free()`.
+
+**Key idea:** Measure → Allocate → Copy → Return.
 
 # 📚 Libft — Linked Lists
 

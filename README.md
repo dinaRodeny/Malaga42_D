@@ -226,6 +226,43 @@ HEAD | v +-----+------+ +-----+------+ +-----+------+ | A | next | --> | B | nex
 - `last->next = new`: Connects the new node to the end.
 
 **Key idea:** Find the last node → Connect the new node.
+# 6. `ft_lstdelone`
+
+## 📚 What to study first
+- Pointers (`*`)
+- Structures (`struct`)
+- Function pointers
+- Dynamic memory management (`free`)
+
+## 🎯 Purpose
+Deletes one node by freeing its content and the node itself, without deleting the next node.
+
+## ⚙️ How it works
+1. Check if `lst` is `NULL`.
+2. Use `del` to free the node's content.
+3. Use `free()` to free the node itself.
+
+## 📊 Drawing
+
+**Before:**
+
+HEAD | v +---------+------+ +---------+------+ | Content | next | --> | Content | NULL | +---------+------+ +---------+------+ NODE 1 NODE 2
+
+
+**After `ft_lstdelone(lst, del)`:**
+
++---------+------+ | Content | NULL | +---------+------+ NODE 2
+
+NODE 1: FREED
+
+
+## 🧠 Remember
+- `del(lst->content)` frees the content using the provided function.
+- `free(lst)` frees the node itself.
+- The next node is **not freed**.
+- `del` is a function pointer that specifies how to delete the content.
+
+**Key idea:** Delete the content → Free the node → Keep the next node.
 
 
 

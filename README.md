@@ -1,6 +1,6 @@
 # 📚 Libft — Linked Lists
 
-# 1. `ft_lstnew`
+# 1. `ft_lstnew`(create)
 
 ## 📖 What to study first
 - Pointers (`*`)
@@ -65,7 +65,7 @@ node | v +-----------+ | content | ----> "Hello" +-----------+ | next | ----> NU
 
 ---
 
-# 2. `ft_lstadd_front`
+# 2. `ft_lstadd_front`(Prepend)
 
 ## 📖 What to study first
 - Pointers (`*` and `&`)

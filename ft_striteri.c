@@ -10,40 +10,37 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "libft.h"
 
-void ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-    unsigned int i;
+	unsigned int	i;
 
-    if (!s || !f)
-        return;
-    i = 0;
-    while (s[i])
-    {
-        f(i, &s[i]);
-        i++;
-    }
+	if (!s || !f)
+		return ;
+	i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }
+
 /*
-void make_upper(unsigned int i, char *c)
+void	make_upper(unsigned int i, char *c)
 {
-    (void)i;
-    if (*c >= 'a' && *c <= 'z')
-        *c = *c - 32;
+	(void)i;
+	if (*c >= 'a' && *c <= 'z')
+		*c = *c - 32;
 }
 
-int main(void)
+int	main(void)
 {
-    char str[] = "hello dondon";
+	char	str[] = "hello dondon";
 
-    printf("Before: %s\n", str);
-
-    ft_striteri(str, make_upper);
-
-    printf("After:  %s\n", str);
-
-    return (0);
-}*/
+	printf("Before: %s\n", str);
+	ft_striteri(str, make_upper);
+	printf("After: %s\n", str);
+	return (0);
+}
+*/

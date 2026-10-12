@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
-/* 
+
+/*
 char	*ft_strchr(const char *s, int c)
 {
 	while (*s != '\0')
@@ -25,6 +25,7 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)s);
 	return (NULL);
 }
+
 size_t	ft_strlen(const char *s)
 {
 	size_t	len;
@@ -35,7 +36,7 @@ size_t	ft_strlen(const char *s)
 	return (len);
 }
 
-size_t	ft_strlcpy( char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	len;
 	size_t	index;
@@ -54,47 +55,46 @@ size_t	ft_strlcpy( char *dst, const char *src, size_t size)
 	dst[index] = '\0';
 	return (len);
 }
-    */
+*/
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-    size_t start;
-    size_t end;
-    char *trim;
+	size_t	start;
+	size_t	end;
+	char	*trim;
 
-    if (!s1 || !set)
-        return (NULL);
-
-   start = 0;
-    while(s1[start] && ft_strchr(set, s1[start]))
-        start++;
-
-    end = ft_strlen(s1);
-    while (end > start && ft_strchr(set, s1[end - 1]))
-        end--;                                  
-
-
-    trim = malloc(end - start + 1);
-    if (!trim)
-        return (NULL);
-
-    ft_strlcpy(trim, s1 + start, end - start + 1);
-    return (trim);
+	if (!s1 || !set)
+		return (NULL);
+	start = 0;
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	end = ft_strlen(s1);
+	while (end > start && ft_strchr(set, s1[end - 1]))
+		end--;
+	trim = malloc(end - start + 1);
+	if (!trim)
+		return (NULL);
+	ft_strlcpy(trim, s1 + start, end - start + 1);
+	return (trim);
 }
-/* 
-int main(void)
+
+/*
+int	main(void)
 {
-    char *s1 = "ababaaaMy name is Simonbbaaabab";
-    char *set = "ab";
-    char *trimmed = ft_strtrim(s1, set);
-    if (trimmed)
-    {
-        printf("Trimmed string: '%s'\n", trimmed);
-        free(trimmed);
-    }
-    else
-    {
-        printf("Error trimming string.\n");
-    }
-    return 0;
-}*/
+	char	*s1;
+	char	*set;
+	char	*trimmed;
+
+	s1 = "ababaaaMy name is Simonbbaaabab";
+	set = "ab";
+	trimmed = ft_strtrim(s1, set);
+	if (trimmed)
+	{
+		printf("Trimmed string: '%s\n'", trimmed);
+		free(trimmed);
+	}
+	else
+		printf("Error trimming string.\n");
+	return (0);
+}
+*/

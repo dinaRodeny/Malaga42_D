@@ -2,7 +2,6 @@
 # 📚 Libft — Mandatory Functions
 Libft is a project at 42 School where you create your own C library by implementing essential standard C library functions from scratch.
 The main goal is to understand how these functions work internally, improve your programming skills in C, and learn how to manage memory, manipulate strings, and handle characters.
-
 # 1. Character Checks
 
 ## 1. `ft_isalpha`

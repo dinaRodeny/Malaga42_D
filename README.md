@@ -1,299 +1,921 @@
 📚 Libft — Mandatory Functions
-
 Libft is a project at 42 School where you create your own C library by implementing essential standard C library functions from scratch. The main goal is to understand how these functions work internally, improve your programming skills in C, and learn how to manage memory, manipulate strings, and handle characters.. Character Checks
-1. ft_isalpha
-📚 What to study first
 
-    Characters (char)
-    ASCII table
-    if statements
-    Comparison operators (>=, <=, &&, ||)
-
-🎯 Purpose
-
-Checks whether a character is an alphabetic letter (A-Z or a-z).
-2. ft_isdigit
-📚 What to study first
-
-    Characters (char)
-    ASCII table
-    Comparison operators
-    if statements
-
-🎯 Purpose
-
-Checks whether a character is a digit (0-9).
-3. ft_isalnum
-📚 What to study first
-
-    ft_isalpha
-    ft_isdigit
-    Logical operators (||, &&)
-
-🎯 Purpose
-
-Checks whether a character is an alphabetic letter or a digit.
-4. ft_isascii
-📚 What to study first
-
-    Characters (char)
-    ASCII table
-    Integer ranges
-    Comparison operators
-
-🎯 Purpose
-
-Checks whether a value belongs to the ASCII range (0-127).
-5. ft_isprint
-📚 What to study first
-
-    ASCII table
-    Printable characters
-    Comparison operators
-
-🎯 Purpose
-
-Checks whether a character is printable (32-126).
-2. String Length and Memory
-6. ft_strlen
-📚 What to study first
-
-    Strings and '\0'
-    Pointers (*)
-    Array indexing
-    Loops (while)
-    Counters
-
-🎯 Purpose
-
-Returns the length of a string, excluding the terminating '\0'.
-7. ft_memset
-📚 What to study first
-
-    Pointers (void *)
-    Type casting
-    Memory addresses
-    Loops
-    Bytes and sizeof
-
-🎯 Purpose
-
-Fills a memory area with a specified byte.
-8. ft_bzero
-📚 What to study first
-
-    Pointers
-    Memory addresses
-    Loops
-    ft_memset
-
-🎯 Purpose
-
-Sets a specified number of bytes to zero.
-9. ft_memcpy
-📚 What to study first
-
-    Pointers (void *)
-    Type casting
-    Memory addresses
-    Loops
-    Bytes and memory copying
-
-🎯 Purpose
-
-Copies a specified number of bytes from one memory area to another. The areas must not overlap.
-10. ft_memmove
-📚 What to study first
-
-    Pointers
-    Memory addresses
-    Loops
-    ft_memcpy
-    Overlapping memory areas
-
-🎯 Purpose
-
-Copies bytes between memory areas, even when the areas overlap.
-3. String Copy and Concatenation
-11. ft_strlcpy
-📚 What to study first
-
-    Strings and '\0'
-    Pointers
-    Array indexing
-    Loops
-    Buffer sizes
-    ft_strlen
-
-🎯 Purpose
-
-Copies a string into a destination buffer of a specified size, ensuring null termination when the size is greater than zero.
-12. ft_strlcat
-📚 What to study first
-
-    Strings and '\0'
-    Pointers
-    Array indexing
-    Loops
-    Buffer sizes
-    ft_strlen
-    ft_strlcpy
-
-🎯 Purpose
-
-Appends a string to a destination string while respecting the specified buffer size.
-4. Character Conversion
-13. ft_toupper
-📚 What to study first
-
-    Characters (char)
-    ASCII table
-    Integer values of characters
-    Conditional statements
-
-🎯 Purpose
-
-Converts a lowercase letter to uppercase.
-14. ft_tolower
-📚 What to study first
-
-    Characters (char)
-    ASCII table
-    Integer values of characters
-    Conditional statements
-
-🎯 Purpose
-
-Converts an uppercase letter to lowercase.
-5. String Search and Comparison
-15. ft_strchr
-📚 What to study first
-
-    Strings and '\0'
-    Pointers
-    Loops
-    Character comparison
-    NULL
-
-🎯 Purpose
-
-Finds the first occurrence of a character in a string.
-16. ft_strrchr
-📚 What to study first
-
-    Strings and '\0'
-    Pointers
-    Loops
-    Character comparison
-    ft_strchr
-
-🎯 Purpose
-
-Finds the last occurrence of a character in a string.
-17. ft_strncmp
-📚 What to study first
-
-    Strings and '\0'
-    Pointers
-    Loops
-    Character comparison
-    ASCII values
-    Unsigned characters
-
-🎯 Purpose
-
-Compares two strings up to a specified number of characters.
-18. ft_memchr
-📚 What to study first
-
-    Pointers (void *)
-    Type casting
-    Memory addresses
-    Loops
-    Byte comparison
-
-🎯 Purpose
-
-Finds the first occurrence of a byte in a memory area.
-19. ft_memcmp
-📚 What to study first
-
-    Pointers (void *)
-    Type casting
-    Memory addresses
-    Loops
-    Unsigned characters
-    Byte comparison
-
-🎯 Purpose
-
-Compares two memory areas byte by byte.
-20. ft_strnstr
-📚 What to study first
-
-    Strings and '\0'
-    Pointers
-    Nested loops
-    Substrings
-    String comparison
-    Buffer lengths
-
-🎯 Purpose
-
-Finds the first occurrence of a substring within a string, searching up to a specified length.
-6. String to Integer
-21. ft_atoi
-📚 What to study first
-
-    Strings and '\0'
-    Pointers
-    Loops
-    ASCII values
-    Character-to-digit conversion
-    Integer arithmetic
-    Whitespace characters
-    Positive and negative numbers
-
-🎯 Purpose
-
-Converts the beginning of a string into an integer.
-🧠 Recommended Learning Order
-
-Study these concepts before implementing the functions:
-
-    C Basics: Variables, data types, operators, and if statements.
-    Characters: ASCII values and character comparisons.
-    Loops: while loops and counters.
-    Arrays and Strings: Indexing and the null terminator '\0'.
-    Pointers: Addresses, dereferencing, and pointer arithmetic.
-    Memory: void *, type casting, and byte manipulation.
-    String Operations: Copying, concatenation, searching, and comparison.
-    Advanced Concepts: Overlapping memory, nested loops, and integer conversion.
-
-Key idea: Understand the concepts first, then implement each function from scratch.22. ft_calloc
 📚 What to study first
 
     Pointers (*)
     Dynamic memory allocation (malloc)
-    free()
+    free()📚 Libft — Mandatory Functions
     sizeof
-    Memory initialization
+    Memory initialization📚 Libft — Mandatory Functions
     size_t
 
 🎯 Purpose
 
-Allocates memory for an array and initializes all its bytes to zero.
+Allocates memory for an array and initializes all its bytes to zero.📚 Libft — Mandatory Functions
 ⚙️ How it works
 
     Calculate the total memory required.
     Allocate memory using malloc().
-    Check whether allocation failed.
+    Check whether allocation failed.📚 Libft — Mandatory Functions
     Initialize the allocated memory to zero.
     Return the allocated memory.
 
-📊 Drawing
+📊 Drawing# 📚 Libft — 42 School Project
 
-Example:
+## 🎯 About the Project
+
+Libft is a project at 42 School where you recreate essential C standard
+library functions and implement additional utility functions.
+
+The goal is to understand how C works internally, improve programming
+skills, and learn about memory management, strings, pointers, and linked lists.
+
+## 📖 Table of Contents
+
+- [Recommended Learning Order](#-recommended-learning-order)
+- [1. Character Checks](#1--character-checks)
+- [2. String Length and Memory](#2--string-length-and-memory)
+- [3. String Copying and Concatenation](#3--string-copying-and-concatenation)
+- [4. Character Conversion](#4--character-conversion)
+- [5. String Searching and Comparison](#5--string-searching-and-comparison)
+- [6. String to Integer](#6--string-to-integer)
+- [7. Dynamic Memory Allocation](#7--dynamic-memory-allocation)
+- [8. String Manipulation](#8--string-manipulation)
+- [9. Integer to String](#9--integer-to-string)
+- [10. Function-Based String Manipulation](#10--function-based-string-manipulation)
+- [11. Output Functions](#11--output-functions)
+- [12. Linked Lists](#12--linked-lists)
+- [13. Compilation and Makefile](#13--compilation-and-makefile)
+- [14. Testing](#14--testing)
+- [Final Study Strategy](#-final-study-strategy)
+
+# 🗺️ Recommended Learning Order
+
+Before implementing the functions, study these concepts in order:
+
+1. **C Basics:** Variables, data types, operators, conditions, and loops.
+2. **Characters:** ASCII values and character comparisons.
+3. **Arrays and Strings:** Array indexing and the null terminator `'\0'`.
+4. **Pointers:** Addresses, dereferencing, pointer arithmetic, and `NULL`.
+5. **Memory:** `void *`, type casting, bytes, and memory copying.
+6. **Dynamic Memory:** `malloc()`, `free()`, and allocation sizes.
+7. **String Operations:** Searching, copying, concatenation, and splitting.
+8. **Function Pointers:** Passing functions as arguments.
+9. **Structures:** `struct`, `typedef`, and the `->` operator.
+10. **Linked Lists:** Double pointers, node management, and memory ownership.
+11. **Compilation:** Header files, object files, static libraries, and Makefiles.
+
+---
+
+# 1. 🔤 Character Checks
+
+These functions check whether a character belongs to a particular category.
+
+## 1.1 `ft_isalpha`
+
+**Purpose:** Checks whether a character is an alphabetic letter (A-Z or a-z).
+
+### 📚 What to Study First
+- `char` and `int` data types.
+- ASCII values.
+- Comparison operators (`>=`, `<=`).
+- Logical operators (`&&`, `||`).
+- `if` statements.
+- Function return values.
+
+**Key idea:** Check whether the character belongs to the uppercase or lowercase alphabet.
+
+## 1.2 `ft_isdigit`
+
+**Purpose:** Checks whether a character is a digit (0-9).
+
+### 📚 What to Study First
+- ASCII values of digits.
+- Character comparisons.
+- Relational operators.
+- Conditional statements.
+- Integer return values.
+
+**Key idea:** A digit character has an ASCII value between `'0'` and `'9'`.
+
+## 1.3 `ft_isalnum`
+
+**Purpose:** Checks whether a character is alphabetic or numeric.
+
+### 📚 What to Study First
+- `ft_isalpha()`.
+- `ft_isdigit()`.
+- Function calls.
+- Logical OR (`||`).
+- Conditional statements.
+
+**Key idea:** A character is alphanumeric if it is a letter or a digit.
+
+## 1.4 `ft_isascii`
+
+**Purpose:** Checks whether a value belongs to the ASCII range (0-127).
+
+### 📚 What to Study First
+- Integer ranges.
+- ASCII representation.
+- Comparison operators.
+- Signed and unsigned integers.
+- Boolean conditions.
+
+**Key idea:** Check whether the value is between 0 and 127, inclusive.
+
+## 1.5 `ft_isprint`
+
+**Purpose:** Checks whether a character is printable.
+
+### 📚 What to Study First
+- ASCII values.
+- Printable characters.
+- Character comparisons.
+- Integer ranges.
+- Conditional statements.
+
+**Key idea:** Printable ASCII characters have values from 32 to 126, inclusive.
+
+---
+
+# 2. 🧵 String Length and Memory
+
+## 2.1 `ft_strlen`
+
+**Purpose:** Returns the length of a string, excluding the terminating `'\0'`.
+
+### 📚 What to Study First
+- Strings and `'\0'`.
+- Pointers (`*`).
+- Array indexing.
+- `while` loops.
+- Counters.
+- The `size_t` type.
+
+**Key idea:** Count characters until the null terminator is reached.
+
+## 2.2 `ft_memset`
+
+**Purpose:** Fills a memory area with a specified byte.
+
+### 📚 What to Study First
+- Pointers (`void *`).
+- Type casting.
+- Memory addresses.
+- Bytes and `sizeof`.
+- `unsigned char`.
+- Array indexing and loops.
+
+**Key idea:** Fill the requested number of bytes with the specified value.
+
+## 2.3 `ft_bzero`
+
+**Purpose:** Sets a specified number of bytes to zero.
+
+### 📚 What to Study First
+- Pointers.
+- Memory addresses.
+- Bytes.
+- Loops.
+- `ft_memset()`.
+- Memory initialization.
+
+**Key idea:** Set each of the specified bytes to zero.
+
+## 2.4 `ft_memcpy`
+
+**Purpose:** Copies a specified number of bytes between memory areas.
+The memory areas must not overlap.
+
+### 📚 What to Study First
+- Pointers (`void *`).
+- Type casting.
+- Memory addresses.
+- `unsigned char`.
+- Byte-by-byte copying.
+- `size_t`.
+
+**Key idea:** Copy bytes from the source to the destination without modifying the source.
+
+## 2.5 `ft_memmove`
+
+**Purpose:** Copies bytes between memory areas, even when they overlap.
+
+### 📚 What to Study First
+- Everything covered in `ft_memcpy()`.
+- Memory overlap.
+- Pointer comparisons.
+- Forward and backward copying.
+- Source and destination addresses.
+
+**Key idea:** Choose a safe copying direction when the source and destination overlap.
+
+## 2.6 `ft_memchr`
+
+**Purpose:** Finds the first occurrence of a byte in a memory area.
+
+### 📚 What to Study First
+- Pointers (`void *`).
+- Type casting.
+- `unsigned char`.
+- Memory addresses.
+- Loops.
+- Byte comparisons.
+
+**Key idea:** Examine bytes until the requested value is found or the specified length is exhausted.
+
+## 2.7 `ft_memcmp`
+
+**Purpose:** Compares two memory areas byte by byte.
+
+### 📚 What to Study First
+- Pointers.
+- `unsigned char`.
+- Memory representation.
+- Byte comparisons.
+- Loops.
+- Signed versus unsigned characters.
+- Return values.
+
+**Key idea:** Compare corresponding bytes and return their difference at the first mismatch.
+
+---
+
+# 3. 📝 String Copying and Concatenation
+
+## 3.1 `ft_strlcpy`
+
+**Purpose:** Copies a string into a destination buffer while respecting its size.
+
+### 📚 What to Study First
+- Strings and `'\0'`.
+- Pointers.
+- Array indexing.
+- Loops.
+- Buffer sizes.
+- `ft_strlen()`.
+- Null termination.
+- `size_t`.
+
+**Key idea:** Copy at most `dstsize - 1` characters and terminate the destination when `dstsize > 0`.
+
+## 3.2 `ft_strlcat`
+
+**Purpose:** Appends a source string to a destination string while respecting the buffer size.
+
+### 📚 What to Study First
+- Strings and `'\0'`.
+- Pointers.
+- Array indexing.
+- Buffer sizes.
+- `ft_strlen()`.
+- `ft_strlcpy()`.
+- Destination string length.
+- `size_t`.
+
+**Key idea:** Find the existing destination length, then append as much of the source as the buffer allows.
+
+## 3.3 `ft_strdup`
+
+**Purpose:** Creates a dynamically allocated copy of a string.
+
+### 📚 What to Study First
+- Pointers.
+- Strings and `'\0'`.
+- `ft_strlen()`.
+- Dynamic memory allocation (`malloc()`).
+- Loops.
+- String copying.
+- Allocation failure handling.
+- `free()`.
+
+**Key idea:** Measure the string, allocate enough memory for its characters and terminator, and copy it.
+
+## 3.4 `ft_substr`
+
+**Purpose:** Creates a new string containing part of an existing string.
+
+### 📚 What to Study First
+- Pointers.
+- Strings and `'\0'`.
+- Array indexing.
+- `ft_strlen()`.
+- Dynamic memory allocation.
+- Loops.
+- `size_t`.
+- Allocation failure handling.
+
+**Key idea:** Start at the requested index, copy up to the maximum length, and terminate the new string.
+
+If `start` is beyond the end of the original string, return an allocated empty string if allocation succeeds.
+
+## 3.5 `ft_strjoin`
+
+**Purpose:** Creates a new string by joining two strings.
+
+### 📚 What to Study First
+- Pointers.
+- Strings and `'\0'`.
+- `ft_strlen()`.
+- Dynamic memory allocation.
+- String copying.
+- Array indexing.
+- Allocation sizes.
+- Integer overflow considerations.
+
+**Key idea:** Allocate enough memory for both strings and the terminator, then copy them into the new buffer.
+
+## 3.6 `ft_strtrim`
+
+**Purpose:** Removes characters belonging to a specified set from the beginning and end of a string.
+
+### 📚 What to Study First
+- Pointers.
+- Strings and `'\0'`.
+- Loops.
+- Character comparisons.
+- `ft_strlen()`.
+- Dynamic memory allocation.
+- Array indexing.
+- Searching for characters in a string.
+
+**Key idea:** Find the first and last characters that are not in the specified set, then copy the remaining substring.
+
+Characters inside the string are not removed just because they belong to the set.
+
+## 3.7 `ft_split`
+
+**Purpose:** Splits a string into an array of strings using a delimiter character.
+
+### 📚 What to Study First
+- Pointers (`*` and `**`).
+- Strings and `'\0'`.
+- Arrays of strings (`char **`).
+- Loops.
+- Dynamic memory allocation.
+- `free()`.
+- Counting words.
+- Delimiter handling.
+- Helper functions.
+- Cleaning up allocated memory.
+
+**Key idea:** Count the words, allocate an array of pointers, allocate each word separately, and terminate the array with `NULL`.
+
+Consecutive delimiters should not create empty words. If allocation fails, free previously allocated memory before returning `NULL`.
+
+---
+
+# 4. 🔠 Character Conversion
+
+## 4.1 `ft_toupper`
+
+**Purpose:** Converts a lowercase letter to uppercase.
+
+### 📚 What to Study First
+- Characters and ASCII values.
+- Integer values of characters.
+- Character ranges.
+- Conditional statements.
+- Arithmetic on character codes.
+
+**Key idea:** Convert a lowercase ASCII letter to its uppercase equivalent.
+
+## 4.2 `ft_tolower`
+
+**Purpose:** Converts an uppercase letter to lowercase.
+
+### 📚 What to Study First
+- Characters and ASCII values.
+- Integer values of characters.
+- Character ranges.
+- Conditional statements.
+- Arithmetic on character codes.
+
+**Key idea:** Convert an uppercase ASCII letter to its lowercase equivalent.
+
+---
+
+# 5. 🔎 String Searching and Comparison
+
+## 5.1 `ft_strchr`
+
+**Purpose:** Finds the first occurrence of a character in a string.
+
+### 📚 What to Study First
+- Strings and `'\0'`.
+- Pointers.
+- Loops.
+- Character comparisons.
+- `NULL`.
+- Pointer arithmetic.
+
+**Key idea:** Search from the beginning and return a pointer to the first match.
+
+Remember that searching for `'\0'` should return a pointer to the string terminator.
+
+## 5.2 `ft_strrchr`
+
+**Purpose:** Finds the last occurrence of a character in a string.
+
+### 📚 What to Study First
+- Strings and `'\0'`.
+- Pointers.
+- Loops.
+- Character comparisons.
+- `ft_strchr()`.
+- Pointer arithmetic.
+- Remembering the last match.
+
+**Key idea:** Find the final occurrence of the requested character.
+
+## 5.3 `ft_strncmp`
+
+**Purpose:** Compares two strings up to a specified number of characters.
+
+### 📚 What to Study First
+- Strings and `'\0'`.
+- Pointers.
+- Loops.
+- Character comparisons.
+- ASCII values.
+- `unsigned char`.
+- `size_t`.
+- Return values.
+
+**Key idea:** Compare corresponding characters as unsigned characters until they differ, a terminator is reached, or `n` characters have been examined.
+
+## 5.4 `ft_strnstr`
+
+**Purpose:** Finds the first occurrence of a substring within a string, searching within a specified length.
+
+### 📚 What to Study First
+- Strings and `'\0'`.
+- Pointers.
+- Nested loops.
+- Substrings.
+- String comparison.
+- Buffer lengths.
+- `ft_strlen()`.
+- `ft_strncmp()`.
+- Pointer arithmetic.
+
+**Key idea:** Search for the substring without examining characters beyond the permitted search length.
+
+An empty substring matches at the beginning of the string.
+
+---
+
+# 6. 🔢 String to Integer
+
+## 6.1 `ft_atoi`
+
+**Purpose:** Converts the beginning of a string into an integer.
+
+### 📚 What to Study First
+- Strings and `'\0'`.
+- Pointers.
+- Loops.
+- ASCII values.
+- Character-to-digit conversion.
+- Integer arithmetic.
+- Whitespace characters.
+- Positive and negative numbers.
+- Signed integers.
+- Integer overflow considerations.
+
+**Key idea:** Skip leading whitespace, process an optional sign, and convert consecutive decimal digits into an integer.
+
+Follow the behavior required by your Libft specification for out-of-range inputs.
+
+---
+
+# 7. 💾 Dynamic Memory Allocation
+
+## 7.1 `ft_calloc`
+
+**Purpose:** Allocates memory for an array and initializes all allocated bytes to zero.
+
+### 📚 What to Study First
+- Pointers.
+- Dynamic memory allocation (`malloc()`).
+- `free()`.
+- `sizeof`.
+- Memory initialization.
+- `size_t`.
+- Multiplication overflow.
+- Allocation failure handling.
+
+**Key idea:** Calculate the requested size safely, allocate memory, initialize it to zero, and return the pointer.
+
+Remember:
+- `nmemb` is the number of elements.
+- `size` is the size of each element.
+- The requested size is `nmemb * size` bytes.
+- Return `NULL` if allocation fails or the size calculation cannot be represented safely.
+
+---
+
+# 8. 🔄 Integer to String
+
+## 8.1 `ft_itoa`
+
+**Purpose:** Converts an integer into a string, including negative numbers.
+
+### 📚 What to Study First
+- Pointers.
+- Strings and `'\0'`.
+- Integer arithmetic.
+- Negative numbers.
+- Dynamic memory allocation.
+- Loops.
+- ASCII digits.
+- Counting digits.
+- Signed integer limits.
+- `INT_MIN` and `INT_MAX`.
+
+**Key idea:** Count the required characters, allocate enough memory, convert the digits, and add a minus sign when necessary.
+
+Be careful with `INT_MIN`, whose positive magnitude cannot be represented by an ordinary `int` on common systems.
+
+---
+
+# 9. ✂️ Function-Based String Manipulation
+
+## 9.1 `ft_strmapi`
+
+**Purpose:** Creates a new string by applying a function to each character.
+
+### 📚 What to Study First
+- Pointers.
+- Strings and `'\0'`.
+- Function pointers.
+- Array indexing.
+- Loops.
+- Dynamic memory allocation.
+- Passing arguments to functions.
+- Character transformation.
+
+**Key idea:** Allocate a new string and apply the supplied function to each character, passing its index and value.
+
+The original string remains unchanged.
+
+## 9.2 `ft_striteri`
+
+**Purpose:** Applies a function to each character of a string, allowing the function to modify it.
+
+### 📚 What to Study First
+- Pointers.
+- Strings and `'\0'`.
+- Function pointers.
+- Array indexing.
+- Loops.
+- Passing addresses to functions.
+- Pointer dereferencing.
+- The difference between `char` and `char *`.
+
+**Key idea:** Pass the index and address of each character to the supplied function.
+
+Unlike `ft_strmapi()`, this function modifies the original string and returns nothing.
+
+---
+
+# 10. 🖨️ Output Functions
+
+## 10.1 `ft_putchar_fd`
+
+**Purpose:** Writes a single character to a specified file descriptor.
+
+### 📚 What to Study First
+- Characters (`char`).
+- File descriptors (`fd`).
+- Standard input and output.
+- The `write()` function.
+- Pointers.
+- The address-of operator (`&`).
+
+**Key idea:** Use `write()` to write one byte to the specified file descriptor.
+
+Common file descriptors:
+- `0`: Standard input.
+- `1`: Standard output.
+- `2`: Standard error.
+
+## 10.2 `ft_putstr_fd`
+
+**Purpose:** Writes a string to a specified file descriptor.
+
+### 📚 What to Study First
+- Strings and `'\0'`.
+- Pointers.
+- File descriptors.
+- The `write()` function.
+- `ft_strlen()`.
+- `NULL` checks.
+
+**Key idea:** Use `write()` to send the string's characters to the requested file descriptor.
+
+## 10.3 `ft_putendl_fd`
+
+**Purpose:** Writes a string followed by a newline to a specified file descriptor.
+
+### 📚 What to Study First
+- Strings and `'\0'`.
+- Pointers.
+- File descriptors.
+- The `write()` function.
+- The newline character (`'\n'`).
+- String lengths.
+
+**Key idea:** Write the string, then write the newline character.
+
+## 10.4 `ft_putnbr_fd`
+
+**Purpose:** Writes an integer to a specified file descriptor.
+
+### 📚 What to Study First
+- Integers (`int`).
+- Characters and ASCII values.
+- Recursion or loops.
+- Negative numbers.
+- File descriptors.
+- The `write()` function.
+- Digit extraction using `%` and `/`.
+- `INT_MIN`.
+
+**Key idea:** Convert each digit into a character and write the characters in the correct order.
+
+Remember to handle negative values and `INT_MIN` correctly.
+
+---
+
+# 11. 🔗 Linked Lists
+
+Before implementing these functions, understand the node structure used in Libft:
+
+typedef struct slist { void content; struct slist next; } t_list;
+
+
+### 📚 General Linked-List Concepts to Study
+
+- Structures (`struct`).
+- The `typedef` keyword.
+- Pointers to structures.
+- The arrow operator (`->`).
+- Dynamic memory allocation (`malloc()`).
+- Memory deallocation (`free()`).
+- `NULL` pointers.
+- Singly linked lists.
+- Head pointers.
+- Double pointers (`**`).
+- Function pointers.
+- Traversing nodes using loops.
+
+## 11.1 `ft_lstnew`
+
+**Purpose:** Creates a new node, stores the supplied content pointer, and initializes `next` to `NULL`.
+
+### 📚 What to Study First
+- Pointers.
+- Dynamic memory allocation.
+- Structures.
+- `typedef`.
+- The arrow operator (`->`).
+- `sizeof`.
+- `NULL`.
+- Allocation failure handling.
+
+**Key idea:** Allocate memory for one node, initialize its fields, and return the node's address.
+
+## 11.2 `ft_lstadd_front`
+
+**Purpose:** Adds a new node at the beginning of a linked list.
+
+### 📚 What to Study First
+- Pointers (`*` and `&`).
+- Double pointers (`**`).
+- Structures.
+- The arrow operator (`->`).
+- Linked-list traversal.
+- Head pointers.
+- `NULL`.
+
+**Key idea:** Make the new node point to the current first node, then update the head pointer.
+
+Understand the difference between `lst`, `*lst`, and `new`.
+
+## 11.3 `ft_lstsize`
+
+**Purpose:** Counts the number of nodes in a linked list.
+
+### 📚 What to Study First
+- Pointers.
+- Structures.
+- Linked lists.
+- `while` loops.
+- Counters.
+- Traversing nodes.
+
+**Key idea:** Count every node until the pointer becomes `NULL`.
+
+## 11.4 `ft_lstlast`
+
+**Purpose:** Returns the last node of a linked list.
+
+### 📚 What to Study First
+- Pointers.
+- Structures.
+- The arrow operator (`->`).
+- Linked lists.
+- `while` loops.
+- `NULL` checks.
+
+**Key idea:** Follow the `next` pointer until the current node's `next` field is `NULL`.
+
+If the list is empty, return `NULL`.
+
+## 11.5 `ft_lstadd_back`
+
+**Purpose:** Adds a new node at the end of a linked list.
+
+### 📚 What to Study First
+- Pointers (`*` and `&`).
+- Double pointers (`**`).
+- Structures.
+- Linked lists.
+- Loops.
+- `ft_lstlast()`.
+- Head pointers.
+- `NULL`.
+
+**Key idea:** If the list is empty, make the new node the head. Otherwise, connect it to the last node.
+
+## 11.6 `ft_lstdelone`
+
+**Purpose:** Deletes one node by freeing its content using a supplied function and then freeing the node itself.
+
+### 📚 What to Study First
+- Pointers.
+- Structures.
+- Function pointers.
+- Dynamic memory management (`free()`).
+- Memory ownership.
+- `NULL` checks.
+
+**Key idea:** Call the supplied deletion function on the node's content, then free the node itself.
+
+Do not free the following node.
+
+## 11.7 `ft_lstclear`
+
+**Purpose:** Deletes every node in a linked list and sets the head pointer to `NULL`.
+
+### 📚 What to Study First
+- Pointers (`*` and `&`).
+- Double pointers (`**`).
+- Linked lists.
+- Function pointers.
+- Dynamic memory management.
+- `free()`.
+- Traversal.
+- Saving pointers before freeing memory.
+
+**Key idea:** Save the next node, delete the current node, and continue until the list is empty. Finally, set the head pointer to `NULL`.
+
+Save the next pointer before freeing the current node to avoid accessing freed memory.
+
+## 11.8 `ft_lstiter`
+
+**Purpose:** Applies a function to the content of every node in a linked list.
+
+### 📚 What to Study First
+- Pointers.
+- Structures.
+- Linked lists.
+- Function pointers.
+- `while` loops.
+- The arrow operator (`->`).
+- Traversing nodes.
+- `void` functions.
+
+**Key idea:** Apply the supplied function to the current node's content, move to the next node, and repeat.
+
+This function does not create or delete nodes.
+
+## 11.9 `ft_lstmap`
+
+**Purpose:** Creates a new linked list by applying a function to each node's content while preserving the original list.
+
+### 📚 What to Study First
+- Pointers.
+- Function pointers.
+- Structures.
+- Linked lists.
+- Dynamic memory allocation.
+- Memory deallocation.
+- `ft_lstnew()`.
+- `ft_lstadd_back()`.
+- `ft_lstclear()`.
+- Error handling.
+- Memory ownership.
+
+**Key idea:** Transform each node's content, create a new node for the transformed content, and append it to the new list.
+
+If allocation fails, clean up the partially constructed list and handle the transformed content according to the required ownership rules.
+
+---
+
+# 12. 🛠️ Compilation and Makefile
+
+A Makefile automates the compilation of your library.
+
+### 📚 What to Study First
+
+- What a compiler does.
+- The `cc` compiler.
+- Compilation flags (`-Wall`, `-Wextra`, `-Werror`).
+- Source files (`.c`).
+- Header files (`.h`).
+- Object files (`.o`).
+- Static libraries (`.a`).
+- The `ar` command.
+- Makefile targets and dependencies.
+- Pattern rules.
+- Tabs versus spaces in recipes.
+- Phony targets.
+
+### 🧠 Key Idea
+
+Your Makefile compiles source files into object files and combines those files into `libft.a`.
+
+Common commands:
+
+make
+
+
+Build the library.
+
+make clean
+
+
+Remove object files.
+
+make fclean
+
+
+Remove object files and the compiled library.
+
+make re
+
+
+Clean and rebuild the library.
+
+---
+
+# 13. 🧪 Testing
+
+After implementing your functions, test them against the expected behavior.
+
+### 📚 What to Study First
+
+- Function prototypes.
+- Header files.
+- Compiling multiple source files.
+- Linking a static library.
+- Assertions.
+- Edge cases.
+- Segmentation faults.
+- Memory leaks.
+- Compiler warnings.
+- Test-driven development.
+
+### Example: Testing `ft_strlen()`
+
+#include <stdio.h> #include "libft.h"
+
+int main(void) { printf("%zu\n", ftstrlen("Hello")); printf("%zu\n", ftstrlen("")); return (0); }
+
+
+Expected output:
+
+5 0
+
+
+Compile and link your test program against your library:
+
+cc -Wall -Wextra -Werror main.c -L. -lft -o test
+
+
+Run it:
+
+./test
+
+
+Test normal inputs, empty strings, boundary values, and allocation failures where applicable.
+
+---
+
 
 int *arr = ft_calloc(3, sizeof(int));
 
@@ -1192,7 +1814,29 @@ The original list remains unchanged.
     del frees content when necessary, especially if an allocation fails.
     The new list is separate from the original list.
     Returns the head of the new list, or NULL if allocation fails.
+    
 
 Key idea: Transform → Create → Connect → Return.
+
+# 🎯 Final Study Strategy
+
+Stage	Functions	Main concepts
+1	ft_isalpha, ft_isdigit, ft_isalnum, ft_isascii, ft_isprint	ASCII, conditions, operators
+2	ft_strlen, ft_toupper, ft_tolower	Strings, loops, characters
+3	ft_memset, ft_bzero, ft_memcpy, ft_memmove	Pointers, bytes, memory
+4	ft_strlcpy, ft_strlcat, ft_strchr, ft_strrchr, ft_strncmp	String traversal and comparison
+5	ft_memchr, ft_memcmp, ft_strnstr	Memory searching and nested loops
+6	ft_atoi	Parsing and integer arithmetic
+7	ft_calloc, ft_strdup	Dynamic memory allocation
+8	ft_substr, ft_strjoin, ft_strtrim	Allocating and manipulating strings
+9	ft_split	Arrays of pointers and memory management
+10	ft_itoa	Integer conversion and edge cases
+11	ft_strmapi, ft_striteri	Function pointers
+12	ft_putchar_fd, ft_putstr_fd, ft_putendl_fd, ft_putnbr_fd	File descriptors and write()
+13	ft_lstnew, ft_lstadd_front, ft_lstsize, ft_lstlast	Structures and linked lists
+14	ft_lstadd_back, ft_lstdelone, ft_lstclear	Linked-list manipulation and memory ownership
+15	ft_lstiter, ft_lstmap	Function pointers and linked-list traversal
+
+Example:
 
 Key idea: Connect → Update the head. orgized it
